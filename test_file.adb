@@ -1,0 +1,86 @@
+WITH Ada.Integer_Text_Io, Ada.Text_io,file1;
+USE Ada.Integer_Text_io, Ada.Text_io;
+
+PROCEDURE test_file IS
+
+-------------s-------------------------------------------------------------------------
+-----------------------Déclaration des types------------------------------------------
+--------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------
+------------------------Déclaration des sous programmes-------------------------------
+--------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+------------------------Déclaration des variables-------------------------------------
+--------------------------------------------------------------------------------------
+
+PACKAGE file_tab IS NEW file1(integer,10);
+USE file_tab;
+
+n:integer;
+f:file;
+
+--------------------------------------------------------------------------------------
+----------------------------Programme principal---------------------------------------
+--------------------------------------------------------------------------------------
+
+BEGIN
+
+n:=1;
+
+   put("======================================");new_line;
+   put("==           Test des files         ==");new_line;
+   put("======================================");new_line;
+
+
+   InitFile(f);
+
+   put(LireFile(f),1);new_line;
+-- N'affiche pas d'index error, c'est normal
+
+   IF FileVide(f) THEN
+      put("La file est bien vide");new_line;
+   END IF;
+
+   IF NOT FilePleine(f) THEN
+      put("La file n'est pas pleine");new_line;
+   END IF;
+
+-- Enfile 3 sur la file
+   Enfiler(f,3);
+   put(LireFile(f),1);new_line;
+
+-- Enfile 4 sur la file
+
+   Enfiler(f,4);
+   put(LireFile(f),1);new_line;
+-- Affiche normalement 3.
+
+-- Defile f
+   Defiler(f);
+   put(LireFile(f),1);new_line;
+-- Affiche normalement 4
+
+
+-- On remplie la file
+   WHILE NOT FilePleine(f) LOOP
+      Enfiler(f,n);
+      n:=n+1;
+   END LOOP;
+
+   IF FilePleine(f) THEN
+      put("La file est pleine");new_line;
+   END IF;
+
+
+   WHILE NOT FileVide(f) LOOP
+      put(LireFile(f),1);new_line;
+      Defiler(f);
+   END LOOP;
+-- 4 1 2 3 4 5 6 7 8 9 : Il y a bien 10 éléments;
+
+put("Fin des tests");new_line;
+
+END test_file;
