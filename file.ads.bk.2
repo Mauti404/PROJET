@@ -1,0 +1,37 @@
+-------------------------Déclaration des types génériques------------------------------
+
+GENERIC
+
+   TYPE T_Inconnu IS PRIVATE;
+   N:integer;
+   WITH PROCEDURE Value (i : IN T_Inconnu);
+   --WITH PROCEDURE Donne (i : IN OUT T_Inconnu); utile ?
+
+PACKAGE file IS
+
+-------------------------------Déclaration des types-----------------------------------
+
+TYPE T_Tab IS ARRAY (1..N) OF T_Inconnu;
+
+TYPE file IS RECORD
+
+   T:T_Tab;
+   tete:integer;
+   taille:integer;
+
+END RECORD;
+
+---------------------------Déclaration des fonctions----------------------------------
+
+FUNCTION LectureFile (f : file) RETURN T_Inconnu; -- fait
+PROCEDURE Defiler (f : IN OUT file); -- fait
+PROCEDURE Enfiler (f : IN OUT file); -- fait
+FUNCTION InitFile RETURN file; -- fait
+FUNCTION FileVide (f : file) RETURN boolean; -- fait
+FUNCTION FilePleine (f : file) RETURN boolean; --- fait
+
+
+----------------------------Déclaration des types privés------------------------------
+
+
+END file;

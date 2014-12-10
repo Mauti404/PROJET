@@ -1,0 +1,46 @@
+WITH Ada.Integer_Text_Io, Ada.Text_io;
+USE Ada.Integer_Text_io, Ada.Text_io;
+
+PROCEDURE BODY pile IS
+
+--------------------------------------------------------------------------------------
+------------------------Déclaration des sous programmes-------------------------------
+--------------------------------------------------------------------------------------
+
+FUNCTION lecture (p : pile) RETURN T_Inconnu IS
+
+BEGIN
+
+   RETURN Value(p.T(p.pointeur));
+
+END lecture;
+
+--------------------------------------------------------------------------------------
+
+FUNCTION PileVide (p : pile) RETURN boolean IS
+BEGIN
+
+   RETURN
+
+END PileVide;
+
+
+
+
+PROCEDURE depiler (p : IN OUT pile) IS
+
+BEGIN
+
+   IF
+
+
+END depiler;
+
+
+
+
+
+--------------------------------------------------------------------------------------
+
+
+END pile;

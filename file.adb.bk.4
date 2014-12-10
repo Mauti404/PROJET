@@ -1,0 +1,80 @@
+WITH Ada.Integer_Text_Io, Ada.Text_io;
+USE Ada.Integer_Text_io, Ada.Text_io;
+
+PROCEDURE BODY file IS
+
+--------------------------------------------------------------------------------------
+------------------------Déclaration des sous programmes-------------------------------
+--------------------------------------------------------------------------------------
+
+FUNCTION Lecturefile (f : file) RETURN T_Inconnu IS
+
+BEGIN
+
+   RETURN f.T(f.tete);
+
+END Lecturefile;
+
+--------------------------------------------------------------------------------------
+
+FUNCTION FileVide (f : file) RETURN boolean IS
+BEGIN
+
+   RETURN F.taille=0;
+
+END FileVide;
+
+--------------------------------------------------------------------------------------
+
+FUNCTION FilePleine (f:file) RETURN boolean IS
+BEGIN
+
+   RETURN f.taille=N;
+
+END FilePleine;
+
+
+--------------------------------------------------------------------------------------
+
+PROCEDURE defiler (f : IN OUT file) IS
+
+BEGIN
+
+   IF FileVide(f) THEN
+      put("Vous ne pouvez pas défiler une file vide");new_line;
+   ELSE
+      f.taille:=f.taille-1;
+   END IF;
+
+END defiler;
+
+--------------------------------------------------------------------------------------
+
+PROCEDURE Enfiler (f : IN OUT file ; v : T_Inconnu) IS
+
+BEGIN
+
+   IF FilePleine(p) THEN
+      put("Vous ne pouvez pas enfiler sur une file pleine");new_line:
+   ELSE
+      f.taille:=p.taille+1;
+      f.T(f.taille):=v;
+   END IF;
+
+END Enfiler;
+
+--------------------------------------------------------------------------------------
+
+FUNCTION InitFile RETURN pile IS
+
+   f : file;
+
+BEGIN
+
+   f.tete:=1;
+   f.taille:=0;
+   RETURN f;
+
+END Initfile;
+
+END pile;

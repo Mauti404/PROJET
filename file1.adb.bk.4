@@ -1,0 +1,72 @@
+WITH Ada.Integer_Text_Io, Ada.Text_io;
+USE Ada.Integer_Text_io, Ada.Text_io;
+
+PACKAGE BODY file1 IS
+
+--------------------------------------------------------------------------------------
+------------------------Déclaration des sous programmes-------------------------------
+--------------------------------------------------------------------------------------
+
+FUNCTION LireFile (f : file) RETURN T_Inconnu IS
+
+BEGIN
+
+   RETURN f.T(f.tete);
+
+END LireFile;
+
+--------------------------------------------------------------------------------------
+
+FUNCTION FileVide (f : file) RETURN boolean IS
+BEGIN
+
+   RETURN F.taille=0;
+
+END FileVide;
+
+--------------------------------------------------------------------------------------
+
+FUNCTION FilePleine (f:file) RETURN boolean IS
+BEGIN
+
+   RETURN f.taille=N;
+
+END FilePleine;
+
+
+--------------------------------------------------------------------------------------
+
+PROCEDURE Defiler (f : IN OUT file) IS
+
+BEGIN
+
+   FOR i IN 1..f.taille-1 LOOP;
+      f.T(i)=f.T(i+1);
+   END LOOP;
+
+   f.taille:=f.taille-1;
+
+END defiler;
+
+--------------------------------------------------------------------------------------
+
+PROCEDURE Enfiler (f : IN OUT file ; v : T_Inconnu) IS
+
+BEGIN
+
+   f.taille:=f.taille+1;
+   f.T(f.taille):=v;
+
+END Enfiler;
+
+--------------------------------------------------------------------------------------
+
+PROCEDURE InitFile (f: IN OUT file) IS
+BEGIN
+
+   f.tete:=1;
+   f.taille:=0;
+
+END Initfile;
+
+END file1;

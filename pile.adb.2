@@ -1,0 +1,80 @@
+WITH Ada.Integer_Text_Io, Ada.Text_io;
+USE Ada.Integer_Text_io, Ada.Text_io;
+
+PROCEDURE BODY pile IS
+
+--------------------------------------------------------------------------------------
+------------------------Déclaration des sous programmes-------------------------------
+--------------------------------------------------------------------------------------
+
+FUNCTION lecture (p : pile) RETURN T_Inconnu IS
+
+BEGIN
+
+   RETURN Value(p.T(p.pointeur));
+
+END lecture;
+
+--------------------------------------------------------------------------------------
+
+FUNCTION PileVide (p : pile) RETURN boolean IS
+BEGIN
+
+   RETURN p.pointeur=0;
+
+END PileVide;
+
+--------------------------------------------------------------------------------------
+
+FUNCTION PilePleine (p:pile) RETURN boolean IS
+BEGIN
+
+   RETURN p.pointeur=N;
+
+END PilePleine;
+
+
+--------------------------------------------------------------------------------------
+
+PROCEDURE depiler (p : IN OUT pile) IS
+
+BEGIN
+
+   IF PileVide(p) THEN
+      put("Vous ne pouvez pas dépiler une pile vide");new_line;
+   ELSE
+      p.pointeur:=p.pointeur-1;
+   END IF;
+
+END depiler;
+
+--------------------------------------------------------------------------------------
+
+PROCEDURE Empiler (p : IN OUT pile ; v : T_Inconnu) IS
+
+BEGIN
+
+   IF PilePleine(p) THEN
+      put("Vous ne pouvez pas empiler sur une pile pleine");new_line:
+   ELSE
+      p.pointeur:=p.pointeur+1;
+      p.T(p.pointeur):=v;
+   END IF;
+
+END Empiler;
+
+--------------------------------------------------------------------------------------
+
+FUNCTION InitPile RETURN pile IS
+
+
+
+
+
+
+
+
+
+
+
+END pile;

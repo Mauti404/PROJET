@@ -1,0 +1,82 @@
+V "GNAT Lib v2014"
+M P W=b
+A -gnatwu
+A -g
+A -gnato
+A -gnatwa
+A -gnat05
+A -mtune=generic
+A -march=pentiumpro
+P ZX
+
+RN
+RV NO_IO
+RV SPARK_05
+
+U test_pile%b		test_pile.adb		b5257ac3 NE OO SU IL KU
+W ada%s			ada.ads			ada.ali
+W ada.integer_text_io%s	a-inteio.ads		a-inteio.ali
+W ada.text_io%s		a-textio.adb		a-textio.ali
+W pile1%s		pile1.adb		pile1.ali
+
+D ada.ads		20140406181354 3ffc8e18 ada%s
+D a-except.ads		20140406181356 43d57f8c ada.exceptions%s
+D a-finali.ads		20140406181358 69f99942 ada.finalization%s
+D a-inteio.ads		20140406181358 f64b89a4 ada.integer_text_io%s
+D a-ioexce.ads		20140406181358 e4a01f64 ada.io_exceptions%s
+D a-stream.ads		20140406181354 1a984740 ada.streams%s
+D a-tags.ads		20140406181356 dc4d0634 ada.tags%s
+D a-textio.ads		20140406181358 386df5d4 ada.text_io%s
+D a-tiinio.ads		20140406181358 aa04e5d6 ada.text_io.integer_io%s
+D a-unccon.ads		20140406181358 f9eb8f06 ada.unchecked_conversion%s
+D interfac.ads		20140406181358 69adb1b9 interfaces%s
+D i-cstrea.ads		20140406181356 febc86ed interfaces.c_streams%s
+D pile1.ads		20141210112252 a11e6b55 pile1%s
+D pile1.adb		20141209172520 4cabf733 pile1%b
+D system.ads		20140406181358 5fc8ae56 system%s
+D s-crtl.ads		20140406181356 2c012597 system.crtl%s
+D s-exctab.ads		20140406181354 54135002 system.exception_table%s
+D s-ficobl.ads		20140406181354 078245e4 system.file_control_block%s
+D s-finmas.ads		20140406181356 814daec4 system.finalization_masters%s
+D s-finroo.ads		20140406181358 4ff27390 system.finalization_root%s
+D s-parame.ads		20140406181358 06da98b2 system.parameters%s
+D s-pooglo.ads		20140406181356 542f33d0 system.pool_global%s
+D s-soflin.ads		20140406181358 aa763b52 system.soft_links%s
+D s-stache.ads		20140406181354 a37c21ec system.stack_checking%s
+D s-stalib.ads		20140406181354 fa0a3617 system.standard_library%s
+D s-stoele.ads		20140406181356 2dc34a04 system.storage_elements%s
+D s-stoele.adb		20140406181354 ed88f8fb system.storage_elements%b
+D s-stopoo.ads		20140406181356 b16154c2 system.storage_pools%s
+D s-traent.ads		20140406181354 b5116092 system.traceback_entries%s
+D s-unstyp.ads		20140406181356 510692af system.unsigned_types%s
+D s-wchcon.ads		20140406181358 1b7d22d2 system.wch_con%s
+D test_pile.adb		20141210112414 da1d6de6 test_pile%b
+X 1 ada.ads
+16K9*Ada 19e8 32|1r6 1r27 2r5 2r26
+X 4 a-inteio.ads
+18K13*Integer_Text_IO[9|46] 32|1w10 2r9
+X 8 a-textio.ads
+49K13*Text_IO 471e16 32|1w31 2r30
+166U14*New_Line 32|33s50 34s50 35s50 50s23 58s23 69s26 77s36 81s39 91s33
+. 94s4 94s46 97s26 101s22
+242U14*Put 32|33s4 34s4 35s4 77s7 81s7 91s7 94s13 101s1
+X 9 a-tiinio.ads
+66U14*Put 32|50s4[4|18] 58s4[4|18] 69s7[4|18] 97s7[4|18]
+X 13 pile1.ads
+9k9*pile1 42e10 32|1w40 19r25
+15R9 pile 32|22r3[19]
+19V13 LirePile{integer} 32|50s8[19] 58s8[19] 69s11[19] 97s11[19]
+20U14 Depiler 32|55s4[19] 70s7[19] 98s7[19]
+21U14 Empiler 32|47s4[19] 54s4[19] 62s4[19] 63s4[19] 64s4[19] 65s4[19] 66s4[19]
+. 87s7[19]
+22V13 PileVide{boolean} 32|76s7[19] 96s14[19]
+23V13 PilePleine{boolean} 32|80s11[19] 86s14[19] 90s7[19]
+24U14 InitPile 32|40s4[19]
+X 32 test_pile.adb
+4U11*test_pile 4b11 104l5 104t14
+19K9 pile_tab[13|9] 20r5
+22r1 p{13|15R9[19]} 40m13 40r13 47m12 47r12 50r17 54m12 54r12 55m12 55r12
+. 58r17 62m12 62r12 63m12 63r12 64m12 64r12 65m12 65r12 66m12 66r12 69r20
+. 70m15 70r15 76r16 80r22 86r25 87m15 87r15 90r18 96r23 97r20 98m15 98r15
+68i8 i{integer}
+

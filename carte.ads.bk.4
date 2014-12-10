@@ -1,0 +1,45 @@
+PACKAGE carte IS
+
+-------------------------------Déclaration des types-----------------------------------
+
+   TYPE T_valeur IS (deux,trois,quarte,cinq,six,sept,huit,neuf,dix,valet,dame,roi,as);
+   TYPE T_enseigne IS (pique,trefle,carreau,coeur);
+   TYPE carte IS PRIVATE;
+   TYPE paquet IS PRIVATE;
+
+
+
+----------------------------Déclaration des types privés------------------------------
+
+PRIVATE
+
+
+   TYPE carte IS RECORD
+
+      enseigne:T_enseigne;
+      valeur:T_valeur;
+
+   END RECORD;
+
+--------------------------------------------------------------------------------------
+
+   TYPE paquet IS ARRAY (1..52) OF carte;
+
+--------------------------------------------------------------------------------------
+
+
+
+
+END carte;
+
+
+
+
+
+
+
+
+
+
+
+

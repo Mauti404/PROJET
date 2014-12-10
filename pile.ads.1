@@ -1,0 +1,37 @@
+-------------------------Déclaration des types génériques------------------------------
+
+GENERIC
+
+   TYPE T_Inconnu IS PRIVATE;
+   N:integer;
+   WITH PROCEDURE Value (i : IN T_Inconnu);
+   WITH PROCEDURE Donne (i : IN OUT T_Inconnu);
+
+PACKAGE pile IS
+
+-------------------------------Déclaration des types-----------------------------------
+
+TYPE T_Tab IS ARRAY (1..N) OF T_Inconnu;
+
+TYPE pile IS RECORD
+
+   T:T_Tab;
+   pointeur:integer;
+
+END RECORD;
+
+---------------------------Déclaration des fonctions----------------------------------
+
+FUNCTION Lecture (p : pile) RETURN T_Inconnu;
+PROCEDURE Depiler (p : IN OUT pile);
+PROCEDURE Empiler (p : IN OUT pile);
+FUNCTION Init_pile RETURN pile;
+FUNCTION PileVide (p :pile) RETURN boolean;
+FUNCTION PilePleine (p : pile) RETURN b;
+
+
+
+----------------------------Déclaration des types privés------------------------------
+
+
+END pile;
